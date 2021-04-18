@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block body %}
+{% load static %}
+<link rel='stylesheet' href="{% static 'css/contact.css' %}">
+<script src="https://kit.fontawesome.com/06db8242e4.js" crossorigin="anonymous"></script>
+<div class="contact_img" >
+    <img src="static/img/contact.jpg" class="my-3" alt="img is loading" width="100%" height="50%">
+</div>
+
+<div class="centerdiv">
+  <a class = "icons" href="https://www.instagram.com/namangarg446/" target="_blank">
+    <i class="fa fa-2x fa-instagram"></i>
+  </a>
+  <a class = "icons" href="https://www.youtube.com/channel/UC7A7EoQYUXMxPrwGl3RXg3w" target="_blank">
+    <i class="fa fa-2x fa-youtube"></i>
+  </a>
+  <a class = "icons" href="https://www.linkedin.com/in/naman-garg-935658201" target="_blank">
+    <i class="fa fa-2x fa-linkedin"></i>
+  </a>
+</div>
+<div class="container mb-3 py-4">
+<div class="container my-3">
+
+<h3>Contact iCoder Admin</h3>
+<form method="post" action="/contact">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" aria-describedby="name"> 
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="phone" class="form-control" name="phone" id="phone">
+  </div>
+  <div class="form-group">
+    <label for="content">Describe your issue:</label> 
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+   
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: 'Lato', sans-serif;
+   }
+.wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.card mx-30{
+    margin-bottom: 5px;
+}
+.card-body{
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: 0px 15px 15px -8px rgba(0,0,0,0.5)
+}
+.card-body h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.card-title {
+   font-size: 24px;
+}
+.d-block{
+    height: 244px;
+    width: 100%;
+}
+.card mb-3{
+    width: 80vh;
+}
+@media (max-width: 400px){
+    .mx-30{
+        margin-bottom: 30px;
+    }
+
+    .d-block {
+        height: 139px;
+    }
+}
+   

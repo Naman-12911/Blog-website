@@ -8,10 +8,9 @@ import requests
 
 # Create your views here.
 def home(request):
-    return render(request, 'home/home.html') 
-
-def about(request): 
-    return render(request, 'home/about.html') 
+    allPosts = Post.objects.all()
+    context = {'allPosts': allPosts}
+    return render(request, 'home/home.html', context)
 
 def contact(request): 
     if request.method=='POST':
@@ -104,3 +103,17 @@ def handleLogout(request):
     logout(request)
     messages.success(request, "Successfully Logged Out")
     return redirect('home') 
+def tiny(request):
+    if request.method == "POST":
+        title = request.POST['title']
+        content = request.POST['content']
+        author = request.POST['author']
+        slug = request.POST['slug']
+        timeStamp = request.POST['timeStamp']
+        if len(author)<2:
+            messages.error(request, "Please fill the form correctly")
+        else:
+            tiny_post = Post(title=title, content=content, author=author, slug=slug, timeStamp=timeStamp)
+            tiny_post.save()
+            messages.success(request, "Your message has been successfully sent")
+    return render(request, 'home/tiny.html')

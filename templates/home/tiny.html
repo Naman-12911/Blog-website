@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
 
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block js%}
     <script src="https://cdn.tiny.cloud/1/zpi5wbuec39zkibohgbrgftt3xp7sk86qrfy74d29bx9gp6m/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
       <style>
           #mytextarea{
@@ -29,15 +28,35 @@
       });
     </script>
 
-  </head>
+{% endblock js %}
+{% block body %}
+{% load static %}
+<link rel='stylesheet' href="{% static 'css/tiny.css' %}">
+<div class="centrediv">
+    <form method="post" action="/tiny">
+      {% csrf_token %}
+      <textarea id="mytextarea" name="content"></textarea>
 
-  <body>
-  <h1>Write a Blog here</h1>
-    <form method="post">
-      <textarea id="mytextarea"></textarea>
+      <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="author" class="form-control" id="author" name="author" aria-describedby="author">
+    </div>
+    <div class="form-group">
+      <label for="slug">Entre any name without space</label>
+      <input type="slug" class="form-control" name="slug" id="slug">
+    </div>
+    <div class="form-group">
+      <label for="timeStamp">Entre date and time</label>
+      <input class="form-control" name="timeStamp" id="timeStamp" type="datetime-local"></input>
+    </div>
+    <button type="submit" class="btn btn-primary my-2">Submit</button>
     </form>
-  </body>
-</html>
+  </div>
+{% endblock body %}
 
 <!--
 <script>

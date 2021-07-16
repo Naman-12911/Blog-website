@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% block body %}
+{% load static %}
+<div class="m-auto w-25 bg-white mt-4 p-4">
+     <h1 class="m-4"><span><img src="{% static 'i.jpg' %}" width="50"></span>ANCoder Blog</h1>
+    <form method="post" id="myform">
+        {% csrf_token %}
+
+        <h5 class="my-2">Email verficaton</h5>
+        <div class="form-group">
+            <input type="text" readonly name="username" placeholder="" class="form-control" required value="{{email}}">
+        </div>
+        <div class="form-group">
+            <input type="text"  name="otp" placeholder="Enter OTP" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" name="sendotp"> Verify</button>
+        </div>
+        <hr>
+   </form>
+</div>
+
+{% endblock%}

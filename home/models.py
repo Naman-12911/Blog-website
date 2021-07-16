@@ -4,7 +4,7 @@ from django.db import models
 # Models In Django ----> Table  --------> Sheet
 
 class Contact(models.Model):
-    sno = models.AutoField(primary_key=True)
+    sno = models.AutoField(primary_key=True, null=False)
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=13)
     email = models.CharField(max_length=100)
@@ -21,3 +21,4 @@ class Sinup(models.Model):
     password = models.CharField(max_length=122)
     def __str__(self):
         return self.name
+

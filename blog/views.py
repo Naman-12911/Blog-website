@@ -4,7 +4,7 @@ from django.contrib import messages
 from blog.templatetags import extras
 # Create your views here.
 def blogHome(request):
-    allPosts = Post.objects.all() 
+    allPosts = Post.objects.all()
     context = {'allPosts': allPosts}
     return render(request, 'blog/blogHome.html', context) 
 

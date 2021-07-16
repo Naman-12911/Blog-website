@@ -14,11 +14,9 @@
 {% block body %}
 {% load static %}
 <link rel='stylesheet' href="{% static 'css/index.css' %}">
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-
 <div class="container my-4">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <ol class="carousel-indicators">
@@ -55,6 +53,52 @@
 </div>
 </div>
 <div class = "wrapper">
+  <div class="container">
+      <div class="row">
+          {% for post in allPosts %}
+          <div class="col-md-6 col-lg-4">
+              <div class="card mx-50" >
+                <!--<img src="{{post.tumbnail}}" class="card-img-top" alt="image"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">{{post.title}} (<i class="fas fa-eye"></i> {{post.views}})</h5>
+                    <p class="card-text">{{post.content|safe| truncatechars:50}}</p>
+                    <a href="/blog/{{post.slug}}" role = "button" target="_blank" class="btn btn-primary">Read more</a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+    <br>
+  </div>
+</div>
+
+</div>
+</div>
+
+{% endblock body %}
+
+<!--
+
+<div class = "wrapper">
+<div class="container">
+  {% for post in allPosts %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}
+          (<i class="fas fa-eye"></i> {{post.views}})</h5>
+        <p class="card-text">{{post.content|safe| truncatechars:250}}</p>
+        <p class="card-text"><small class="text-muted">Last update {{post.timeStamp}}</small></p>
+      <div>
+      <a href="/blog/{{post.slug}}" role = "button" target="_blank" class="btn btn-primary">Read more</a>
+      </div>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+</div>
+
+
+<div class = "wrapper">
 <div class="container">
   {% for post in allPosts %}
     <div class="card mb-3">
@@ -71,6 +115,4 @@
    {% endfor %}
 </div>
 </div>
-</div>
-</div>
-{% endblock body %}
+-->

@@ -5,13 +5,15 @@ from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from blog.models import Post
 import requests
+from blog.models import Post
 import random
 from django.core.mail import send_mail
 from django.conf import settings
 
 # Create your views here.
 def home(request):
-    allPosts = Post.objects.all()
+    #view = Post.views.[50
+    allPosts = Post.objects.all().order_by('-views')
     context = {'allPosts': allPosts}
     return render(request, 'home/home.html', context)
 

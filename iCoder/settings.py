@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY = '6qrmk*c9uau9xzr30u-x89n&ahgn%z+v&#ddb0mm$vc$3f=_-8'
+SECRET_KEY = os.environ['SECRET_KEY']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['blogger-spots.herokuapp.com','localhost']
 
@@ -153,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "ancoder01@gmail.com"
-EMAIL_HOST_PASSWORD = "NamanAnkitCoder01"
+EMAIL_HOST_USER = "namangarg820@gmail.com"
+EMAIL_HOST_PASSWORD = "mfpecfbzillvzskc"
 
 # "mfpecfbzillvzskc"

@@ -133,10 +133,10 @@ def loginhandle(request):
             return redirect("login")
     return render(request, 'home/login.html')
 
-def logout(request):
+def logouthandle(request):
     logout(request)
-    messages.success(request, "Successfully Logged Out")
-    return redirect("/")
+    messages.success(request,'you suceesfully logout')
+    return redirect('login')
 def tiny(request):
     if request.method == "POST":
         title = request.POST['title']

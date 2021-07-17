@@ -21,11 +21,11 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label class="form-control-label"> Name</label>
-                            <input type="text" name="name" class="form-control" required>
+                            <input type="text" name="name" class="form-control" autocomplete="off" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label"> Username</label>
-                            <input type="text" name="username" class="form-control" required>
+                            <label class="form-control-label" id="username_"> Username</label>
+                            <input type="text" name="username" class="form-control" autocomplete="off" required>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"> Phone number</label>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"> Email</label>
-                            <input type="email" name="email"  class="form-control" required>
+                            <input type="email" name="email"  class="form-control" required autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"> Password</label>
@@ -63,7 +63,7 @@
 </div>
 <style>
 body {
-    background: black;
+    background: white;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -110,6 +110,7 @@ input[type=text] {
     margin-bottom: 20px;
     padding-left: 0px;
     color: #ECF0F5;
+    
 }
 
 input[type=password] {
@@ -124,6 +125,7 @@ input[type=password] {
     margin-bottom: 20px;
     color: #ECF0F5;
 }
+
 input[type=number] {
     background-color: #1A2226;
     border: none;
@@ -212,5 +214,7 @@ label {
 .loginbttm {
     padding: 0px;
 }
+
+
 </style>
 {% endblock%}

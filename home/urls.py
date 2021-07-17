@@ -12,7 +12,7 @@ urlpatterns = [
    path('sinup', views.sinuphandle, name='sinup'),
    path('login', views.loginhandle, name='login'),
    path('email/', include(email_urls)),
-   path('logout', views.logout, name="logout"),
+   path('logout',views.logouthandle,name = 'logout'),
    path('reset_password/', auth_views.PasswordResetView.as_view(template_name="home/password_reset.html"),
         name="reset_password"),
    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="home/password_reset_sent.html"),

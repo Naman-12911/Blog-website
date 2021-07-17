@@ -1,5 +1,5 @@
-body {
-    background: #222D32;
+.body {
+    background-color: white;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -16,7 +16,6 @@ body {
     font-size: 80px;
     line-height: 100px;
     background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -47,6 +46,18 @@ input[type=text] {
     padding-left: 0px;
     color: #ECF0F5;
 }
+input[type=email] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
 
 input[type=password] {
     background-color: #1A2226;
@@ -60,7 +71,18 @@ input[type=password] {
     margin-bottom: 20px;
     color: #ECF0F5;
 }
-
+input[type=] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
 .form-group {
     margin-bottom: 40px;
     outline: 0px;
@@ -125,4 +147,5 @@ label {
 .loginbttm {
     padding: 0px;
 }
+
  

@@ -16,7 +16,7 @@
       <div class="carousel-item active">
         <img src="https://cdn.pixabay.com/photo/2012/05/07/18/57/blog-49006_640.png" class="d-block" style="height: 300px;
         width: 100%;" alt="img is loading....">
-        <div class="carousel-caption d-none d-md-block"> </div>
+      <div class="carousel-caption d-none d-md-block"> </div>
       </div> 
     </div>
   </div>
@@ -26,12 +26,9 @@
   <div class="container">
     {% for post in allPosts %}
       <div class="card text-center my-5 mx-5">
-        <h3 class="card-header">
-          {{post.title}}
-        </h3>
+        <h3 class="card-header">{{post.title}}</h3>
         <div class="card-body">
           <h5 class="card-title">(<i class="fas fa-eye"></i> {{post.views}})</h5>
-          <p class="card-text">{{post.content|safe| truncatechars:50}}</p>
           <a href="/blog/{{post.slug}}" class="btn btn-success">Read more</a>
         </div>
         <div class="card-footer text-muted">

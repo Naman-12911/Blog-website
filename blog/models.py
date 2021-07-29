@@ -8,9 +8,9 @@ class Post(models.Model):
     sno = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
-    tumbnail = models.ImageField(upload_to= "static", blank=True)
-    author = models.CharField(max_length=13) 
-    slug = models.CharField(max_length=130)
+    tumbnail = models.ImageField(upload_to= "static/img", blank=True)
+    author = models.CharField(max_length=30) 
+    slug = models.SlugField(max_length=200, unique= True)
     views = models.IntegerField(default=0)
     timeStamp = models.DateTimeField(default=now, blank=True)
 

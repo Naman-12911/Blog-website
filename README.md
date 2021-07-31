@@ -34,4 +34,4 @@ python manage.py migrate
 
 # now, toy are ready to run this project in your localsystem
 
-# python manage.py runserver
+python manage.py runserver

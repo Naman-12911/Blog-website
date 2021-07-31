@@ -25,13 +25,13 @@ activate
 
 you have install all the library that need of this project, you can run this command to install all the library
 
-#pip install -r requirements.txt
+pip install -r requirements.txt
 
-Now, you have to run migartion and migrate command for the database.
+#Now, you have to run migartion and migrate command for the database.
 
-# python manage.py makemigrations
-# python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 
-now, toy are ready to run this project in your localsystem
+# now, toy are ready to run this project in your localsystem
 
 # python manage.py runserver
